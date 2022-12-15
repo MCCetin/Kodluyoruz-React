@@ -1,18 +1,18 @@
 import React from "react";
 import { useState } from "react";
 
-const initialValue = { todo: "", isDone: false };
+const initialValue = { text: "", completed: false };
 
 function Input({ todos, addTodo }) {
   const [input, setInput] = useState(initialValue);
 
   function onChangeInput(e) {
-    setInput({ ...input, todo: `${e.target.value}` });
+    setInput({ ...input, text: `${e.target.value}`, id: Date.now() });
   }
 
   function onSubmit(e) {
     e.preventDefault();
-    if (input.todo === "") {
+    if (input.text === "") {
       return false;
     }
     addTodo([...todos, input]);
@@ -25,7 +25,7 @@ function Input({ todos, addTodo }) {
         <input
           onChange={onChangeInput}
           placeholder="To Do"
-          value={input.todo}
+          value={input.text}
         />
         <button>Add</button>
       </form>
