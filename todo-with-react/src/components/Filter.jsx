@@ -1,6 +1,6 @@
 import React from "react";
 
-function Filter({ todos, filteredTodos, setStatus, setTodos }) {
+function Filter({ todos, setStatus, setTodos }) {
   const changeStatus = (e) => {
     setStatus(e.target.id);
   };
@@ -10,19 +10,27 @@ function Filter({ todos, filteredTodos, setStatus, setTodos }) {
   };
 
   return (
-    <div>
-      <span>{todos.length} item</span>
-      <button onClick={changeStatus} id="all">
-        all
+    <footer className="footer">
+      <span className="todo-count">
+        <strong>{todos.length} </strong>
+        items left
+      </span>
+
+      <ul className="filters">
+        <li className="selected" onClick={changeStatus} id="all">
+          <a href="">All</a>
+        </li>
+        <li onClick={changeStatus} id="active">
+          <a href="">Active</a>
+        </li>
+        <li onClick={changeStatus} id="completed">
+          <a href="">Completed</a>
+        </li>
+      </ul>
+      <button className="clear-completed" onClick={clearCompleted}>
+        Clear Completed
       </button>
-      <button onClick={changeStatus} id="active">
-        active
-      </button>
-      <button onClick={changeStatus} id="completed">
-        completed
-      </button>
-      <span onClick={clearCompleted}>Clear Completed</span>
-    </div>
+    </footer>
   );
 }
 

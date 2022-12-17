@@ -20,16 +20,17 @@ function Input({ todos, addTodo }) {
   }
 
   return (
-    <div>
+    <header class="header">
+      <h1>todos</h1>
       <form onSubmit={onSubmit}>
         <input
+          className="new-todo"
           onChange={onChangeInput}
           placeholder="To Do"
           value={input.text}
         />
-        <button>Add</button>
       </form>
-    </div>
+    </header>
   );
 }
 

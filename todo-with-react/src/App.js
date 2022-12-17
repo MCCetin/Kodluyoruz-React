@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Input from "./components/Input.jsx";
 import List from "./components/List.jsx";
 import Filter from "./components/Filter.jsx";
+import "./style.css";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -25,7 +26,7 @@ function App() {
   }, [status, todos]);
 
   return (
-    <div className="App">
+    <section className="App todoapp">
       <Input todos={todos} addTodo={setTodos} />
       <List todos={filteredTodos} setTodo={setTodos} />
       <Filter
@@ -34,7 +35,7 @@ function App() {
         setStatus={setStatus}
         setTodos={setTodos}
       />
-    </div>
+    </section>
   );
 }
 
