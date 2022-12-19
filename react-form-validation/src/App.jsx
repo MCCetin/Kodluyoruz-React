@@ -1,9 +1,9 @@
-import LetterForm from "./components/LetterForm";
+import Form from "./components/Form"
 
 function App() {
   return (
     <div className="App">
-      <LetterForm />
+      <Form />
     </div>
   );
 }
