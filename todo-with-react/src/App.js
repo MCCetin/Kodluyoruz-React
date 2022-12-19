@@ -13,10 +13,10 @@ function App() {
     (() => {
       switch (status) {
         case "active":
-          setFilteredTodos(todos.filter((todos) => !todos.completed));
+          setFilteredTodos(todos.filter((todo) => !todo.completed));
           break;
         case "completed":
-          setFilteredTodos(todos.filter((todos) => todos.completed));
+          setFilteredTodos(todos.filter((todo) => todo.completed));
           break;
         default:
           setFilteredTodos(todos);

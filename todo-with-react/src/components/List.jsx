@@ -2,7 +2,7 @@ import React from "react";
 
 function List({ todos, setTodo }) {
   const list = todos.map((todo, i) => (
-    <li key={todo + i} className={todo.completed ? "completed" : ""}>
+    <li key={todo.id} className={todo.completed ? "completed" : ""}>
       <div className="view">
         <input
           className="toggle"

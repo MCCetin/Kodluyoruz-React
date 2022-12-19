@@ -2,6 +2,7 @@ import React from "react";
 
 function Filter({ todos, setStatus, setTodos }) {
   const changeStatus = (e) => {
+    e.preventDefault();
     setStatus(e.target.id);
   };
 
@@ -17,14 +18,14 @@ function Filter({ todos, setStatus, setTodos }) {
       </span>
 
       <ul className="filters">
-        <li className="selected" onClick={changeStatus} id="all">
-          <a href="">All</a>
+        <li className="selected" onClick={(e)=>changeStatus(e)} id="all">
+          All
         </li>
-        <li onClick={changeStatus} id="active">
-          <a href="">Active</a>
+        <li onClick={(e)=>changeStatus(e)} id="active">
+          Active
         </li>
-        <li onClick={changeStatus} id="completed">
-          <a href="">Completed</a>
+        <li onClick={(e)=>changeStatus(e)} id="completed">
+          Completed
         </li>
       </ul>
       <button className="clear-completed" onClick={clearCompleted}>

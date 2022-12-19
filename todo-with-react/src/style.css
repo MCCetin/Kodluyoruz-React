@@ -296,6 +296,8 @@ body {
 
 .filters li {
   display: inline;
+  padding-right: 5px;
+  cursor: pointer;
 }
 
 .filters li a {
