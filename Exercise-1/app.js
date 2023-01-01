@@ -1,11 +1,12 @@
-async function getData(userId) {
-  const { data: user } = await fetch(
-    `https://jsonplaceholder.typicode.com/users/${userId}`
-  );
-  const { data: posts } = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
-  );
+export async function getData(userId) {
+  const user = await (
+    await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+  ).json();
 
-  return user + posts;
+  const posts = await (
+    await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+  ).json();
+
+  console.log(user);
+  console.log(posts);
 }
-export default getData;
